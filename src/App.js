@@ -1,13 +1,14 @@
+import { render } from '@testing-library/react';
 import './App.css';
-
+import Heading from './components/Header'
 function App() {
+
+
+
   return (
-   <div>
-       <h2>
-         IS PROJECT FRONTEND
-       </h2>
-    </div>
-  );
+ <Heading/>
+   );
 }
+
 
 export default App;
