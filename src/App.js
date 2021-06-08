@@ -1,12 +1,19 @@
 import { render } from '@testing-library/react';
 import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+
 import Heading from './components/Header'
 function App() {
-
-
-
   return (
- <Heading/>
+  <Router>
+
+  <Route path ='/'exact render = {()=>(
+    <>
+     <Heading/>
+    </>
+  )}/>
+
+ </Router>
    );
 }
 
