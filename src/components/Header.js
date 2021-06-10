@@ -55,15 +55,16 @@ class Heading extends React.Component {
             <Content style={{ margin: '0px 20px ' }}>
               <Breadcrumb style={{ margin: '10px' }}>
                 <Breadcrumb.Item><h2 style={{color:'darkblue',textAlign:'center' ,fontWeight:'bolder'}}>EVERYDAY</h2></Breadcrumb.Item>
-               <Breadcrumb.Item>Quick Action</Breadcrumb.Item>
-               <Breadcrumb.Item>Quick Action</Breadcrumb.Item>
-               <Breadcrumb.Item>Quick Action</Breadcrumb.Item>
+            
+               <Breadcrumb.Item>Login</Breadcrumb.Item>
+               <Breadcrumb.Item>Register</Breadcrumb.Item>
+               <Breadcrumb.Item>Home</Breadcrumb.Item>
               </Breadcrumb>
               <div className="site-layout-background" style={{ padding: 24, minHeight: 600 }}>
-                <h3>
-                  Everyday
+                <h3 style={{fontSize:'44px'}}>
+                  Every<span style={{fontWeight:'bold', fontSize:'20px'}}>DAY</span>
                 </h3>
-                <p>######### <br></br>  Add home content here  #####################</p>
+                <p>######### <br></br>  Add home content here  <br></br> #####################</p>
               </div>
             </Content>
             <Footer style={{ textAlign: 'center' }}>ISP ©2021 Created by Marcel & Silas</Footer>
