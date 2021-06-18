@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Login from './components/Login';
 import Register from './components/Register';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -61,7 +62,7 @@ class Heading extends React.Component {
             <Header className="site-layout-background" style={{ padding: 0, marginTop:'-20px', }} />
             <Content style={{ margin: '0px 20px ' }}>
               <Breadcrumb style={{ margin: '10px' }}>
-                <Breadcrumb.Item><h2 style={{color:'darkblue',textAlign:'center' ,fontWeight:'bolder'}}>EVERYDAY</h2></Breadcrumb.Item>
+                {/* <Breadcrumb.Item><h2 style={{color:'darkblue',textAlign:'center' ,fontWeight:'bolder'}}>EVERYDAY</h2></Breadcrumb.Item> */}
             
                <Breadcrumb.Item><Link to ='/login'>Login</Link></Breadcrumb.Item>
                <Breadcrumb.Item><Link to ='/register'>Register</Link></Breadcrumb.Item>
@@ -73,7 +74,7 @@ class Heading extends React.Component {
                 </h3>
                 <p>######### <br></br>  Add home content here  <br></br> #####################</p>
               </div>
-              <div>/
+              <div>
               
               </div>
             </Content>
