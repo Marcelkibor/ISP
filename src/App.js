@@ -37,12 +37,13 @@ class Heading extends React.Component {
           <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
             <div className="logo" />
             <Menu theme="dark" defaultSelectedKeys={['1']} >
-              <Menu.Item icon={<HomeOutlined />}>
-              <Link to ='/'>Home</Link>
+              <Menu.Item icon={<HomeOutlined />} key='1'>
+              <Link to ='/' style={{textDecoration:'none'}}>Home</Link>
               </Menu.Item>
-              <Menu.Item  icon={<UserOutlined/>}>
-              <Link to ='/login'>Login</Link>
+              <Menu.Item  icon={<UserOutlined/>}key='2'>
+              <Link to ='/login'style={{textDecoration:'none'}}>Login</Link>
               </Menu.Item>
+              <Menu.Item  icon={<TeamOutlined/>}key='3'  ><Link to ='/register'className='homelinks' style= {{textDecoration:'none'}}>Register</Link></Menu.Item>
               {/* <SubMenu key="sub1" icon={<UserOutlined />} title="User">
                 <Menu.Item key="3">Tom</Menu.Item>
                 <Menu.Item key="4">Bill</Menu.Item>
@@ -50,7 +51,7 @@ class Heading extends React.Component {
               </SubMenu> */}
               
               
-              <Menu.Item  icon={<TeamOutlined/>} ><Link to ='/register'>Register</Link></Menu.Item>
+          
               {/* <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
                 <Menu.Item key="6">Team 1</Menu.Item>
                 <Menu.Item key="8">Team 2</Menu.Item>
