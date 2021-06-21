@@ -33,11 +33,12 @@ const Register = () => {
 
 
 <Layout>
-<Header className="header" style ={{backgroundColor:'#2c3e50'}} >
+<Header className="header" style ={{backgroundColor:'#16a085'}} >
      
-     <Menu style={{backgroundColor:'#2c3e50', marginLeft:'25%'}} mode="horizontal" defaultSelectedKeys={['1']}>
-       <Menu.Item key="2"><Link to ='/' style={{textDecoration:'none', color:'white'}}>Home</Link></Menu.Item>
-       <Menu.Item key="3"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Login</Link></Menu.Item>
+     <Menu style={{backgroundColor:'#16a085', marginLeft:'39%'}} mode="horizontal" defaultSelectedKeys={['3']}>
+     <Menu.Item key="1"><Link to ='/' style={{textDecoration:'none', color:'white'}}>Home</Link></Menu.Item>
+       <Menu.Item key="2"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Login</Link></Menu.Item>
+       <Menu.Item key="3"><Link to ='/register' style={{textDecoration:'none', color:'white'}}>Register</Link></Menu.Item>
      </Menu>
      </Header>
 <div style={{padding:'25%', marginTop:'-10%'}}>

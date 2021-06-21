@@ -15,6 +15,7 @@ const { SubMenu } = Menu;
 class Heading extends React.Component {
     state = {
       collapsed: false,
+      
     };
   
     onCollapse = collapsed => {
@@ -30,42 +31,23 @@ class Heading extends React.Component {
        <Router>
          <Route path='/' exact render ={()=>(
            <>
-   <Layout style={{ minHeight: '100vh',marginTop:'-50px' }}>
-          <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-            <div className="logo" />
-            <Menu theme="dark" defaultSelectedKeys={['1']} >
-              <Menu.Item icon={<HomeOutlined />} key='1'>
-              <Link to ='/' style={{textDecoration:'none'}}>Home</Link>
-              </Menu.Item>
-              <Menu.Item  icon={<UserOutlined/>}>
-              <Link to ='/login'style={{textDecoration:'none'}}>Login</Link>
-              </Menu.Item>
-              <Menu.Item  icon={<TeamOutlined/>}  ><Link to ='/register'className='homelinks' style= {{textDecoration:'none'}}>Register</Link></Menu.Item>
+          
            
-            </Menu>
-          </Sider>
-          <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0, marginTop:'-20px', }} />
-            <Content style={{ margin: '0px 20px ' }}>
-              <Breadcrumb style={{ margin: '10px' }}>
-                {/* <Breadcrumb.Item><h2 style={{color:'darkblue',textAlign:'center' ,fontWeight:'bolder'}}>EVERYDAY</h2></Breadcrumb.Item> */}
-            
-               <Breadcrumb.Item><Link to ='/login' style={{textDecoration:'none'}}>Login</Link></Breadcrumb.Item>
-               <Breadcrumb.Item><Link to ='/register'style={{textDecoration:'none'}}>Register</Link></Breadcrumb.Item>
-               <Breadcrumb.Item><Link to ='/'style={{textDecoration:'none'}}>Home</Link></Breadcrumb.Item>
-              </Breadcrumb>
-              <div className="site-layout-background" style={{ padding: 24, minHeight: 600 }}>
-                <h3 style={{fontSize:'44px'}}>
-                  Every<span style={{fontWeight:'bold', fontSize:'20px'}}>DAY</span>
-                </h3>
-                <p>######### <br></br>  Add home content here  <br></br> #####################</p>
-              </div>
-              <div>
-              
-              </div>
-            </Content>
-            <Footer style={{ textAlign: 'center' }}>ISP ©2021 Created by Marcel & Silas</Footer>
-          </Layout>
+   <Layout style={{ minHeight: '100vh', marginTop:'0' }}>
+         
+          <Header style={{backgroundColor:'#16a085'}}>
+          <Menu style={{backgroundColor:'#16a085', marginLeft:'39%'}} mode="horizontal" defaultSelectedKeys={['1']}>
+       <Menu.Item key="1"><Link to ='/' style={{textDecoration:'none', color:'white'}}>Home</Link></Menu.Item>
+       <Menu.Item key="2"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Login</Link></Menu.Item>
+       <Menu.Item key="3"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Register</Link></Menu.Item>
+     </Menu>
+          </Header>
+          <Content>
+            <h4 style ={{textAlign:'center', marginLeft:'-3%', marginTop:'20px'}}>
+              Welcome to <b>Everyday</b>
+              </h4>
+                <p style ={{textAlign:'center', marginLeft:'-3%', marginTop:'20px'}} >Start Managing you teams</p>
+          </Content>
         </Layout>
       );
            </>
