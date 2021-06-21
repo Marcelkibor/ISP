@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {  Form, Button,} from 'react-bootstrap'
-const Login = ({details}) => {
+import {Form, Button,} from 'react-bootstrap'
+import Login from './Login'
+import { Layout, Menu, Breadcrumb} from 'antd';
+import { Header } from 'antd/lib/layout/layout'
+const Register = () => {
     
     const[name, setusername] = useState('')
     const[email, setemail] = useState('')
@@ -20,19 +23,31 @@ const Login = ({details}) => {
     })
     
   });
-  const Apiresp = await response.json();
-
-  console.log(Apiresp)
+ 
   
 }
 
 
     return (
-      
-<div style={{padding:'20%'}}>
-<button className='btn btn-danger'
+     
 
-><Link to ='/' style = {{textDecoration:'none', color:'white'}}>Home</Link></button> 
+
+<Layout>
+<Header className="header" style ={{backgroundColor:'#2c3e50'}} >
+     
+     <Menu style={{backgroundColor:'#2c3e50', marginLeft:'25%'}} mode="horizontal" defaultSelectedKeys={['1']}>
+       <Menu.Item key="2"><Link to ='/' style={{textDecoration:'none', color:'white'}}>Home</Link></Menu.Item>
+       <Menu.Item key="3"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Login</Link></Menu.Item>
+     </Menu>
+     </Header>
+<div style={{padding:'25%', marginTop:'-10%'}}>
+  <div name = 'registerText'>
+    <h5 style={{textAlign:'center'}}>
+     Fill in the Form to continue
+    </h5>
+  </div>
+
+
 
 <form className = 'add-form' onSubmit = {submit} style ={{marginTop:'20px'}}> 
     <div name = 'username'>
@@ -54,26 +69,30 @@ const Login = ({details}) => {
           <label>Password</label>
             <input type = 'password'required ={true} placeholder = 'Enter Password'value ={password} onChange ={(e)=>setpassword(e.target.value)}  className ='form-control'/>
          </div>
-        <br>
+         
+         <br>
         </br>
-         <Button variant='success' type ='submit'>Signup</Button>
+         <Button variant='danger' type ='submit'>Signup</Button>
         
+        
+       </form>
+       
 
            
             {/* <div className = 'form-control form-control-check'>
             <label>Set reminder</label>
             <input type = 'checkbox' checked = {reminder} value ={useremail} onChange ={(e)=>setemail(e.currentTarget.checked)}/>
             </div> */}
-          
-        </form>
 
 </div>
+
+</Layout>
 
        
     )
 }
 
-export default Login
+export default Register
 
 
 

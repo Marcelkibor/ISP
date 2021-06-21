@@ -25,10 +25,7 @@ class Heading extends React.Component {
     render() {
       const { collapsed } = this.state;
 
-      const onclick =()=>{ 
-        console.log('you can now apply redirection')
-      }
-
+      
       return (
        <Router>
          <Route path='/' exact render ={()=>(
@@ -40,23 +37,11 @@ class Heading extends React.Component {
               <Menu.Item icon={<HomeOutlined />} key='1'>
               <Link to ='/' style={{textDecoration:'none'}}>Home</Link>
               </Menu.Item>
-              <Menu.Item  icon={<UserOutlined/>}key='2'>
+              <Menu.Item  icon={<UserOutlined/>}>
               <Link to ='/login'style={{textDecoration:'none'}}>Login</Link>
               </Menu.Item>
-              <Menu.Item  icon={<TeamOutlined/>}key='3'  ><Link to ='/register'className='homelinks' style= {{textDecoration:'none'}}>Register</Link></Menu.Item>
-              {/* <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-                <Menu.Item key="3">Tom</Menu.Item>
-                <Menu.Item key="4">Bill</Menu.Item>
-                <Menu.Item key="5">Alex</Menu.Item>
-              </SubMenu> */}
-              
-              
-          
-              {/* <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-                <Menu.Item key="6">Team 1</Menu.Item>
-                <Menu.Item key="8">Team 2</Menu.Item>
-              </SubMenu>
-               */}
+              <Menu.Item  icon={<TeamOutlined/>}  ><Link to ='/register'className='homelinks' style= {{textDecoration:'none'}}>Register</Link></Menu.Item>
+           
             </Menu>
           </Sider>
           <Layout className="site-layout">
@@ -65,9 +50,9 @@ class Heading extends React.Component {
               <Breadcrumb style={{ margin: '10px' }}>
                 {/* <Breadcrumb.Item><h2 style={{color:'darkblue',textAlign:'center' ,fontWeight:'bolder'}}>EVERYDAY</h2></Breadcrumb.Item> */}
             
-               <Breadcrumb.Item><Link to ='/login'>Login</Link></Breadcrumb.Item>
-               <Breadcrumb.Item><Link to ='/register'>Register</Link></Breadcrumb.Item>
-               <Breadcrumb.Item><Link to ='/'>Home</Link></Breadcrumb.Item>
+               <Breadcrumb.Item><Link to ='/login' style={{textDecoration:'none'}}>Login</Link></Breadcrumb.Item>
+               <Breadcrumb.Item><Link to ='/register'style={{textDecoration:'none'}}>Register</Link></Breadcrumb.Item>
+               <Breadcrumb.Item><Link to ='/'style={{textDecoration:'none'}}>Home</Link></Breadcrumb.Item>
               </Breadcrumb>
               <div className="site-layout-background" style={{ padding: 24, minHeight: 600 }}>
                 <h3 style={{fontSize:'44px'}}>
@@ -92,7 +77,24 @@ class Heading extends React.Component {
         </Router>   
       )}
   }
-  
+ 
+
+export default Heading
+// //TODO: find the difference functional components from class components
+   {/* <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+                <Menu.Item key="3">Tom</Menu.Item>
+                <Menu.Item key="4">Bill</Menu.Item>
+                <Menu.Item key="5">Alex</Menu.Item>
+              </SubMenu> */}
+              
+              
+          
+              {/* <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
+                <Menu.Item key="6">Team 1</Menu.Item>
+                <Menu.Item key="8">Team 2</Menu.Item>
+              </SubMenu>
+               */}
+                
   // const Heading = () => {
 //     return (
 //         <div>
@@ -100,6 +102,3 @@ class Heading extends React.Component {
 //         </div>
 //     )
 // }
-
-export default Heading
-// //TODO: find the difference functional components from class components
