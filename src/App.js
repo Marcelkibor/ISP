@@ -1,5 +1,5 @@
 import React from 'react'
-import { DesktopOutlined,PieChartOutlined,FileOutlined,TeamOutlined,UserOutlined, HomeOutlined} from '@ant-design/icons';
+import { DesktopOutlined,PieChartOutlined,FileOutlined,TeamOutlined,UserOutlined, HomeOutlined, LoginOutlined} from '@ant-design/icons';
 import{Menu, Breadcrumb,Layout} from 'antd'
 import './components/header.css'
 import 'antd/dist/antd.css'
@@ -10,7 +10,7 @@ import Register from './components/Register';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+
 
 class Heading extends React.Component {
     state = {
@@ -35,18 +35,20 @@ class Heading extends React.Component {
            
    <Layout style={{ minHeight: '100vh', marginTop:'0' }}>
          
-          <Header style={{backgroundColor:'#16a085'}}>
-          <Menu style={{backgroundColor:'#16a085', marginLeft:'39%'}} mode="horizontal" defaultSelectedKeys={['1']}>
-       <Menu.Item key="1"><Link to ='/' style={{textDecoration:'none', color:'white'}}>Home</Link></Menu.Item>
-       <Menu.Item key="2"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Login</Link></Menu.Item>
-       <Menu.Item key="3"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Register</Link></Menu.Item>
-     </Menu>
-          </Header>
+   <Header className="header" style ={{backgroundColor:'#16a085'}} >
+       
+       <Menu style={{backgroundColor:'#16a085', marginLeft:'39%'}} mode="horizontal" defaultSelectedKeys={['1']}>
+       <Menu.Item key="1"><Link to ='/' style={{textDecoration:'none', color:'white'}}>Home</Link><HomeOutlined style={{fontSize:'20px', color:'white', marginLeft:'12%'}}/></Menu.Item>
+         <Menu.Item key="2"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Login<LoginOutlined style={{marginLeft:'12%', fontSize:'20px'}}/></Link></Menu.Item>
+         <Menu.Item key="3"><Link to ='/register' style={{textDecoration:'none', color:'white'}}>Register</Link><TeamOutlined style={{marginLeft:'12%', fontSize:'20px', color:'white'}}/></Menu.Item>
+       </Menu>
+    
+     </Header>
           <Content>
             <h4 style ={{textAlign:'center', marginLeft:'-3%', marginTop:'20px'}}>
               Welcome to <b>Everyday</b>
               </h4>
-                <p style ={{textAlign:'center', marginLeft:'-3%', marginTop:'20px'}} >Start Managing you teams</p>
+                <p style ={{textAlign:'center', marginLeft:'-3%', marginTop:'20px'}} >Start Managing your Teams</p>
           </Content>
         </Layout>
       );
@@ -62,7 +64,7 @@ class Heading extends React.Component {
  
 
 export default Heading
-// //TODO: find the difference functional components from class components
+// //TODO: find the difference btw functional components from class components
    {/* <SubMenu key="sub1" icon={<UserOutlined />} title="User">
                 <Menu.Item key="3">Tom</Menu.Item>
                 <Menu.Item key="4">Bill</Menu.Item>

@@ -1,32 +1,37 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import {Form, Button,} from 'react-bootstrap'
-import Login from './Login'
-import { Layout, Menu, Breadcrumb} from 'antd';
+import {Button,} from 'react-bootstrap'
+
+import { TeamOutlined, HomeOutlined, LoginOutlined} from '@ant-design/icons';
+import { Layout, Menu} from 'antd';
 import { Header } from 'antd/lib/layout/layout'
+import { Redirect } from 'react-router-dom'
 const Register = () => {
     
     const[name, setusername] = useState('')
     const[email, setemail] = useState('')
     const[password, setpassword] = useState('')
+    const[redirect, setredirect] = useState(false)
 //this is the function for submission to the API end points
   const submit = async (e)=>{
     e.preventDefault();
-
-    const response = await fetch('http://127.0.0.1:8000/api/register/',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({
-      name,
-      email,
-      password,
+    const response = await fetch('http://localhost:8000/api/register',{
+      method:'POST',
+      headers : {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        name,
+        email,
+        password
+      })
     })
-    
-  });
- 
+    const content = response.json()
+    console.log(content)
+    setredirect(true)
+  }
+  if (redirect){
+return <Redirect to ='/login'/>
+  }
   
-}
-
 
     return (
      
@@ -34,12 +39,13 @@ const Register = () => {
 
 <Layout>
 <Header className="header" style ={{backgroundColor:'#16a085'}} >
-     
-     <Menu style={{backgroundColor:'#16a085', marginLeft:'39%'}} mode="horizontal" defaultSelectedKeys={['3']}>
-     <Menu.Item key="1"><Link to ='/' style={{textDecoration:'none', color:'white'}}>Home</Link></Menu.Item>
-       <Menu.Item key="2"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Login</Link></Menu.Item>
-       <Menu.Item key="3"><Link to ='/register' style={{textDecoration:'none', color:'white'}}>Register</Link></Menu.Item>
-     </Menu>
+       
+       <Menu style={{backgroundColor:'#16a085', marginLeft:'39%'}} mode="horizontal" defaultSelectedKeys={['3']}>
+       <Menu.Item key="1"><Link to ='/' style={{textDecoration:'none', color:'white'}}>Home</Link><HomeOutlined style={{fontSize:'20px', color:'white', marginLeft:'12%'}}/></Menu.Item>
+         <Menu.Item key="2"><Link to ='/login' style={{textDecoration:'none', color:'white'}}>Login<LoginOutlined style={{marginLeft:'12%', fontSize:'20px'}}/></Link></Menu.Item>
+         <Menu.Item key="3"><Link to ='/register' style={{textDecoration:'none', color:'white'}}>Register</Link><TeamOutlined style={{marginLeft:'12%', fontSize:'20px', color:'white'}}/></Menu.Item>
+       </Menu>
+    
      </Header>
 <div style={{padding:'25%', marginTop:'-10%'}}>
   <div name = 'registerText'>
